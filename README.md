@@ -1,6 +1,6 @@
 # The Great Tic Tac Toe
 
-This is my very own Tic Tac Toe game. I'm sure you're familiar with the ruleset, but just incase I'll go over them with you again.
+This is my very own **Tic Tac Toe game**. I'm sure you're familiar with the ruleset, but just incase I'll go over them with you again.
 
 ## RULES
 
