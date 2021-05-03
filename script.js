@@ -1,18 +1,23 @@
 // 1. Set up the page
-    //  -- Show the board
-    //  -- Show who's turn it is
+
 // Make player 1 and 2
 let player1 = true
 let player2 = null
+
+// Show whos turn it is
 const whosTurn = document.querySelector('#player')
+
 // Make new variable for the boxes
 const boxes = document.querySelectorAll('section div')
+
 // Make new variable for the button
 const resetButton = document.querySelector('button')
+
 // Make button refresh the page when clicked
 resetButton.addEventListener("click", function() {
     window.location.reload()
 })
+
 // get all rows
 const row1 = document.querySelectorAll('.row1')
 const row2 = document.querySelectorAll('.row2')
@@ -27,10 +32,11 @@ const col3 = document.querySelectorAll('.col3')
 const diag1 = document.querySelectorAll('.diag1')
 const diag2 = document.querySelectorAll('.diag2')
 
+// Record game over
 let gameOver = null
-let counter = 0
 
-// 2. When the user clicks a box: Fill the box with either a O or X symbol
+// Count number of clicks
+let counter = 0
 
 // Get the values of any section of boxes
 function getValues(elements) {
@@ -42,7 +48,7 @@ function getValues(elements) {
     return values
 }
 
-// Check if someone won adn congradulate them
+// Check if someone won and congradulate them
 function didSomeoneWin(elements) {
     let whoWon = ''
 
@@ -71,18 +77,21 @@ function didSomeoneWin(elements) {
     }
 }
 
-// Make all boxes clickable
-
+// 2. When the user clicks a box: Fill the box with either a O or X symbol
+//  -- loop through all boxes
 for (let i = 0; i < boxes.length; i++) {
 
     let currentBox = boxes[i]
     
+    // Make all boxes clickable
     currentBox.addEventListener('click', function rules(event) {
 
+        // Make sure boxes can't be clicked twice
         event.target.removeEventListener("click", rules)
-    // When each player clicks:
-    //  -- add X to the box clicked
-    //  -- switch player and update who's turn it is
+
+        // When each player clicks:
+        //  -- add X to the box clicked
+        //  -- switch player and update who's turn it is
         if (player1 === true) {
             counter++
             event.target.innerText = 'X'
@@ -97,7 +106,7 @@ for (let i = 0; i < boxes.length; i++) {
             player1 = true
         }
         
-        // Check if a player won and congradulate them
+        // Check if a player got 3 in a line and congradulate them
         didSomeoneWin(row1)
         didSomeoneWin(row2)
         didSomeoneWin(row3)
@@ -107,96 +116,9 @@ for (let i = 0; i < boxes.length; i++) {
         didSomeoneWin(diag1)
         didSomeoneWin(diag2)
 
-        // If someone won make the boxes unclickable
+        // If every box is full tell players it's a tie
         if (counter == 9 && gameOver != true) {
             alert("It's a tie!")
         }
     })
 }   
-
-
-// 3. Check if any user has won
-    
-
-// function getRowValues(rowElements) {
-//     let values = [];
-
-//     for( let i = 0; i < rowElements.length; i++) {
-//         values.push(rowElements[i].textContent)
-//     }
-//     return values
-// }
-//  -- check if every box in a row has the same value
-// if (getRowValues(row1) === player1Wins) {
-//     row1.style.backgroundColor = 'green'
-//     alert ("player 1 Wins!")
-// } else if (getRowValues(row1) === player2Wins) {
-//     row1.style.backgroundColor = 'green'
-//     alert ("player 2 Wins!")
-// }
-        //  -- if thats true:
-            //  -- Highlight the boxes
-            //  -- congradulate the player
-
-
-    // Get the values of columns 1-3 everytime a box in a column is clicked
-
-        //  -- check if every box in a column has the same value
-        //  -- if it's true: 
-            //  -- Highlight the boxes
-            //  -- congradulate the player
-
-    // Get the values of diagonals 1 and 2 everytime a box diagonally is clicked
-        //  -- check if every box has the same value
-        //  -- if it's true:
-            //  -- Highlight the boxes
-            //  -- congradulate the player
-
-            
-// 4. Check if no ones won
-    //  -- Record how many boxes have values in them
-        //  -- if all 9 boxes have a value:
-            //  -- alert the players it's a tie
-            //  -- prompt them to restart (Maybe restart button starts flashing)
-
-
-
-// 5. Restart the game 
-    //  -- Add button called 'restart' When pressed:
-        //  -- Clear the board 
-
-
-
-
-// function getDiagonalValues(rowElements) {
-//     let newArray = [];
-
-//     for( let i = 0; i < rowElements.length; i++) {
-//         newArray.push(rowElements[i].textContent)
-//     }
-//     return newArray
-// }
-
-// let row1Values = getRowValues(document.querySelectorAll('.row1'))
-// let row2Values = getRowValues(document.querySelectorAll('.row2'))
-// let row3Values = getRowValues(document.querySelectorAll('.row3'))
-
-
-// checkIfUserWon()
-
-// function checkIfUserWon() {
-//     if (doTheyHaveThreeInARow()) {
-//         console.log('You win')
-//     } else {
-//         // Keep Playing
-//     }
-// }
-
-// function doTheyHaveThreeInARow() {
-//     if (doTheyHaveThreeInARowInRow1()
-//         || doTheyHaveThreeInARowInRow2()
-//         || doTheyHaveThreeInARowInRow3()){
-
-//     }
-// }
-
