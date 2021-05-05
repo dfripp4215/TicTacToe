@@ -2,13 +2,16 @@
 
 // Make player 1 and 2
 let player1 = true
-let player2 = null
+
 
 // Show whos turn it is
 const whosTurn = document.querySelector('#player')
 
 // Make new variable for the boxes
 const boxes = document.querySelectorAll('section div')
+
+// Make new variable to display who won
+const outcome = document.querySelector('.outcome')
 
 // Make new variable for the button
 const resetButton = document.querySelector('button')
@@ -66,11 +69,11 @@ function didSomeoneWin(elements) {
         } 
         
         if (whoWon === 'Player 1') {
-            alert(whoWon + " Won the game!")
+            outcome.innerText = whoWon + " Won The Game!"
             gameOver = true
             break
         } else if (whoWon === 'Player 2') {
-            alert(whoWon + " Won the game!")
+            outcome.innerText = whoWon + " Won The Game!"
             gameOver = true
             break
         } 
@@ -86,39 +89,41 @@ for (let i = 0; i < boxes.length; i++) {
     // Make all boxes clickable
     currentBox.addEventListener('click', function rules(event) {
 
-        // Make sure boxes can't be clicked twice
-        event.target.removeEventListener("click", rules)
+        // Make sure you can only click a box while the game is in play
+        if (!gameOver) {
 
-        // When each player clicks:
-        //  -- add X to the box clicked
-        //  -- switch player and update who's turn it is
-        if (player1 === true) {
-            counter++
-            event.target.innerText = 'X'
-            whosTurn.innerHTML = '2'
-            player1 = false
-            player2 = true 
-        } else if (player1 != true) {
-            counter++
-            event.target.innerText = 'O'
-            whosTurn.innerHTML = '1'
-            player2 = false
-            player1 = true
-        }
-        
-        // Check if a player got 3 in a line and congradulate them
-        didSomeoneWin(row1)
-        didSomeoneWin(row2)
-        didSomeoneWin(row3)
-        didSomeoneWin(col1)
-        didSomeoneWin(col2)
-        didSomeoneWin(col3)
-        didSomeoneWin(diag1)
-        didSomeoneWin(diag2)
+            // Make sure boxes can't be clicked twice
+            event.target.removeEventListener("click", rules)
 
-        // If every box is full tell players it's a tie
-        if (counter == 9 && gameOver != true) {
-            alert("It's a tie!")
+            // When each player clicks:
+            //  -- add X to the box clicked
+            //  -- switch player and update who's turn it is
+            if (player1 === true) {
+                counter++
+                event.target.innerText = 'X'
+                whosTurn.innerHTML = '2'
+                player1 = false
+            } else {
+                counter++
+                event.target.innerText = 'O'
+                whosTurn.innerHTML = '1'
+                player1 = true
+            }
+            
+            // Check if a player got 3 in a line and congradulate them
+            didSomeoneWin(row1)
+            didSomeoneWin(row2)
+            didSomeoneWin(row3)
+            didSomeoneWin(col1)
+            didSomeoneWin(col2)
+            didSomeoneWin(col3)
+            didSomeoneWin(diag1)
+            didSomeoneWin(diag2)
+
+            // If every box is full tell players it's a tie
+            if (counter == 9 && !gameOver) {
+                outcome.innerText = "It's a Tie!"
+            }
         }
     })
 }   

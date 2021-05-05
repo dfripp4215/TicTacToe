@@ -12,20 +12,24 @@
     <!-- HTML: make make 9 divs in a container with respectable classes -->
 
 <body>
-    <h1>TicTacToe</h1>
-    <h2>Player<div id='player'>1</div></h2> 
+    <header>
+        <h1>TicTacToe</h1>
+        <h2>Player:<span id='player'>1</span></h2> 
+    </header>
 
-    <section>
-        <div class='row1 col1 diag1'></div>
-        <div class='row1 col2'></div>
-        <div class='row1 col3 diag2'></div>
-        <div class='row2 col1'></div>
-        <div class='row2 col2 diag1 diag2'></div>
-        <div class='row2 col3'></div>
-        <div class='row3 col1 diag2'></div>
-        <div class='row3 col2'></div>
-        <div class='row3 col3 diag1'></div>
+    <section class='tictactoe-board'>
+        <div class='row1 col1 diag1' id="one"></div>
+        <div class='row1 col2' id="two"></div>
+        <div class='row1 col3 diag2' id="three"></div>
+        <div class='row2 col1' id="four"></div>
+        <div class='row2 col2 diag1 diag2' id="five"></div>
+        <div class='row2 col3' id="six"></div>
+        <div class='row3 col1 diag2' id="seven"></div>
+        <div class='row3 col2' id="eight"></div>
+        <div class='row3 col3 diag1' id="nine"></div>
     </section>
+
+    <h3 class='outcome'></h3>
 
     <button class='reset'>New Game</button>
 </body>

@@ -1,16 +1,73 @@
 /* Create 3 by 3 grid of seperate boxes using the divs */
 
-section {
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(8, 67, 91);
+}
+
+h1 {
+    font-size: 60px;
+    letter-spacing: 2px;
+    color: rgba(245, 245, 245, 0.954);
+}
+
+h2 {
+    text-align: center;
+    color: rgba(245, 245, 245, 0.954);
+}
+
+h2 span {
+    margin-left: 5px;
+}
+
+.tictactoe-board {
     display: grid;
     grid-template-columns: 3fr 3fr 3fr ;
     grid-template-rows: 3fr 3fr 3fr;
-    height: max-content;
-    width: max-content;
-    gap: 10px;
+    height: 485px;
+    width: 485px;
+    margin: 20px;
 }
 
 section div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     height: 150px;
     width: 150px;
-    border: 2px solid black;
+    padding: 5px;
+    font-size: 165px;
+}
+
+.row2 {
+    border-top: 2px solid rgba(245, 245, 245, 0.701);
+    border-bottom: 2px solid rgba(245, 245, 245, 0.701);;
+}
+
+.col2 {
+    border-right: 2px solid rgba(245, 245, 245, 0.701);
+    border-left: 2px solid rgba(245, 245, 245, 0.701);
+}
+
+.outcome {
+    color: green;
+    font-size: 60px;
+    margin: 0;
+}
+
+button {
+    background-color: rgb(8, 67, 91);
+    color: rgba(245, 245, 245, 0.954);
+    font-size: 53px;
+    margin-top: 10px;
+    padding: 10px;
+    border-radius: 10px;
+    border: none;
+}
+
+button:hover {
+    background-color: green
 }
