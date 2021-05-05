@@ -1,8 +1,7 @@
 // 1. Set up the page
 
-// Make player 1 and 2
+// Make player 1, player 2 isn't needed as it's only 2 player
 let player1 = true
-
 
 // Show whos turn it is
 const whosTurn = document.querySelector('#player')
@@ -70,10 +69,12 @@ function didSomeoneWin(elements) {
         
         if (whoWon === 'Player 1') {
             outcome.innerText = whoWon + " Won The Game!"
+            whosTurn.innerHTML = '1'
             gameOver = true
             break
         } else if (whoWon === 'Player 2') {
             outcome.innerText = whoWon + " Won The Game!"
+            whosTurn.innerHTML = '2'
             gameOver = true
             break
         } 
@@ -101,13 +102,13 @@ for (let i = 0; i < boxes.length; i++) {
             if (player1 === true) {
                 counter++
                 event.target.innerText = 'X'
-                whosTurn.innerHTML = '2'
                 player1 = false
+                whosTurn.innerHTML = '2'
             } else {
                 counter++
                 event.target.innerText = 'O'
-                whosTurn.innerHTML = '1'
                 player1 = true
+                whosTurn.innerHTML = '1'
             }
             
             // Check if a player got 3 in a line and congradulate them
