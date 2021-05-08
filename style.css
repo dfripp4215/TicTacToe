@@ -17,6 +17,8 @@ h1 {
 h2 {
     text-align: center;
     color: rgba(245, 245, 245, 0.954);
+    margin: 10px;
+    font-size: 30px;
 }
 
 h2 span {
@@ -53,7 +55,7 @@ section div {
 }
 
 .outcome {
-    color: green;
+    color: #05cc05;
     font-size: 60px;
     margin: 0;
 }
