@@ -42,7 +42,14 @@ section div {
     width: 150px;
     padding: 5px;
     font-size: 165px;
+    
 }
+
+section div:hover {
+    transition: 0.5s ease;
+    background-color: rgb(7, 56, 75);
+}
+
 
 .row2 {
     border-top: 2px solid rgba(245, 245, 245, 0.701);
@@ -52,12 +59,6 @@ section div {
 .col2 {
     border-right: 2px solid rgba(245, 245, 245, 0.701);
     border-left: 2px solid rgba(245, 245, 245, 0.701);
-}
-
-.outcome {
-    color: rgb(5, 204, 5);
-    font-size: 60px;
-    margin: 0;
 }
 
 button {
@@ -73,3 +74,19 @@ button {
 button:hover {
     background-color: green
 }
+
+.outcome {
+    color: rgb(5, 204, 5);
+    font-size: 60px;
+    margin: 0;
+    animation-name: flashing;
+    animation-duration: 0.5s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+@keyframes flashing {
+    from {color: rgb(0, 92, 0);}
+    to {color: rgb(0, 255, 0);}
+  }
+
