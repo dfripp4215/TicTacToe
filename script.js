@@ -47,22 +47,31 @@ let counter = 0
 function getValues(elements) {
     let values = [];
 
+    // Loop through the elements, then push there text content into the values array
     for( let i = 0; i < elements.length; i++) {
         values.push(elements[i].textContent)
     }
+
+    // Make it return values so we can use the output
     return values
 }
 
 // Check if someone won and congradulate them
 function didSomeoneWin(elements) {
+
     let whoWon = ''
 
     for (let i = 0; i < boxes.length; i++) {
 
+        // Use the values of each element and join them into a string, then use that to check if someones won ('XXX' or 'OOO').
         if (getValues(elements).join("") == "XXX") {
+
+            // If someone wins: loop through the elements and visually show someone's won
             for (let i = 0; i < elements.length; i++) {
                 elements[i].style.animationName = 'flashing'
                 headerTwo.style.animationName = 'flashing'
+
+                // Set whoWon to whoevers won
                 whoWon = 'Player 1'
             }
         } else if (getValues(elements).join("") == "OOO") {
@@ -73,11 +82,19 @@ function didSomeoneWin(elements) {
             }
         } 
         
+        // If one of the players wins then show it in the outcome 
         if (whoWon === 'Player 1') {
             outcome.innerText = whoWon + " Won The Game!"
+
+            // Keep whos turn it is as the player who won instead of switching
             whosTurn.innerHTML = '1'
+
+            // Set game over to true
             gameOver = true
+
+            // break the loop
             break
+
         } else if (whoWon === 'Player 2') {
             outcome.innerText = whoWon + " Won The Game!"
             whosTurn.innerHTML = '2'
@@ -103,13 +120,18 @@ for (let i = 0; i < boxes.length; i++) {
             event.target.removeEventListener("click", rules)
 
             // When each player clicks:
-            //  -- add X to the box clicked
-            //  -- switch player and update who's turn it is
-            if (player1 === true) {
+            if (player1) {
+
+                // Keep track of how many times the players have clicked
                 counter++
+
+                //  -- add X to the box clicked
                 event.target.innerText = 'X'
+
+                //  -- switch player and update who's turn it is
                 player1 = false
                 whosTurn.innerHTML = '2'
+
             } else {
                 counter++
                 event.target.innerText = 'O'
@@ -117,7 +139,7 @@ for (let i = 0; i < boxes.length; i++) {
                 whosTurn.innerHTML = '1'
             }
             
-            // Check if a player got 3 in a line and congradulate them
+            // Check if a player got 3 in a line and congradulate them - Find a way to put this into a loop
             didSomeoneWin(row1)
             didSomeoneWin(row2)
             didSomeoneWin(row3)
