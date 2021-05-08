@@ -20,6 +20,9 @@ resetButton.addEventListener("click", function() {
     window.location.reload()
 })
 
+// Make new variable for h2 for the style points
+const headerTwo = document.querySelector('h2')
+
 // get all rows
 const row1 = document.querySelectorAll('.row1')
 const row2 = document.querySelectorAll('.row2')
@@ -55,14 +58,17 @@ function didSomeoneWin(elements) {
     let whoWon = ''
 
     for (let i = 0; i < boxes.length; i++) {
+
         if (getValues(elements).join("") == "XXX") {
             for (let i = 0; i < elements.length; i++) {
-                elements[i].style.backgroundColor = 'green'
+                elements[i].style.animationName = 'flashing'
+                headerTwo.style.animationName = 'flashing'
                 whoWon = 'Player 1'
             }
         } else if (getValues(elements).join("") == "OOO") {
             for (let i = 0; i < elements.length; i++) {
-                elements[i].style.backgroundColor = 'green'
+                elements[i].style.animationName = 'flashing'
+                headerTwo.style.animationName = 'flashing'
                 whoWon = 'Player 2'
             }
         } 

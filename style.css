@@ -19,6 +19,10 @@ h2 {
     color: rgba(245, 245, 245, 0.954);
     margin: 10px;
     font-size: 30px;
+    animation-name: none;
+    animation-duration: 0.5s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
 }
 
 h2 span {
@@ -42,7 +46,10 @@ section div {
     width: 150px;
     padding: 5px;
     font-size: 165px;
-    
+    animation-name: none;
+    animation-duration: 0.5s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
 }
 
 section div:hover {
