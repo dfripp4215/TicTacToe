@@ -26,6 +26,10 @@ https://dfripp4215.github.io/TicTacToe/
 * CSS
 * JavaScript
 
+## Bugs
+
+There is a small chance that a player can win on two different lines at once, it will then highlight both lines.
+
 ## Planning
 
 I started by looking up examples of TicTacToe games on the internet, then I wrote basic psudocode for HTML, CSS, and JavaScript breaking down each section as much as I could.
