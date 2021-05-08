@@ -1,6 +1,6 @@
-# The Great Tic Tac Toe
+# The Great PVP TicTacToe
 
-This is my very own **Tic Tac Toe game** and I've added a **New Game** button for all those who like a rematch. 
+This is my very own player VS player **Tic Tac Toe game**
 
 ## RULES
 
@@ -16,7 +16,7 @@ I'm sure you're familiar with the ruleset, but just incase I'll go over them wit
 
 **Good Luck!**
 
-## Here's a link so you can start playing!
+## Here's the link, start playing!
 
 https://dfripp4215.github.io/TicTacToe/
 
@@ -24,7 +24,7 @@ https://dfripp4215.github.io/TicTacToe/
 
 * Displays on screen whos turn it is.
 * Shows what box you're hovering over.
-* Visual effects when someone.
+* Visual effects when someone wins.
 * New Game button.
 
 ## Technologies Used
@@ -43,5 +43,8 @@ I started by looking up examples of TicTacToe games on the internet, then I wrot
 
 ## Future Features
 
+* Add scoring system to keep track of how many times a player wins
+* Add 'Player VS Computer' system
 * Add more styling and animations to make it really **POP** when someone wins.
 * Add confetti.
+* Add more confetti.
