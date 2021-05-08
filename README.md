@@ -2,7 +2,7 @@
 
 This is my very own **Tic Tac Toe game** and I've added a **New Game** button for all those who like a rematch. 
 
-Here's a link so you can start playing!: https://dfripp4215.github.io/TicTacToe/
+Here's a link so you can start playing!:  https://dfripp4215.github.io/TicTacToe/
 
 I'm sure you're familiar with the ruleset, but just incase I'll go over them with you again.
 
