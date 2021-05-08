@@ -20,6 +20,13 @@ I'm sure you're familiar with the ruleset, but just incase I'll go over them wit
 
 https://dfripp4215.github.io/TicTacToe/
 
+## Features
+
+* Displays on screen whos turn it is.
+* Shows what box you're hovering over.
+* Visual effects when someone.
+* New Game button.
+
 ## Technologies Used
 
 * HTMl
